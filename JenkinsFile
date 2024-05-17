@@ -1,0 +1,17 @@
+pipeline{
+    agent{label 'MAY_17'}
+    stages{
+        stage(vcs){
+            steps{
+                sh 'git --version'
+            }
+        }
+        stage(build){
+            steps{
+                sh 'java -version'
+                sh 'mvn --version'
+
+            }
+        }
+    }
+}
